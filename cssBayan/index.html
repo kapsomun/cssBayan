@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS BAYAN</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .accordeon {
+        max-width: 800px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px 10px;
+        display: flex;
+        flex-direction: column;
+      }
+      .accordeon:hover .accordeon__item_plus {
+        display: block;
+      }
+      .accordeon:hover p {
+        color: black;
+      }
+      .accordeon__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.6s;
+      }
+      .accordeon__item_head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        border-bottom: 1px solid gray;
+        margin: 5px 0;
+        cursor: pointer;
+      }
+      .accordeon__item_plus {
+        display: none;
+      }
+      .accordeon__item_hide {
+        height: 0;
+        transition: all 0.6s;
+      }
+      .accordeon__item_hide img {
+        height: 0px;
+        width: 100%;
+        object-fit: contain;
+        transition: all 0.6s;
+        cursor: pointer;
+      }
+      .accordeon__item:hover .accordeon__item_hide,
+      .accordeon__item:hover .accordeon__item_hide img {
+        height: 400px;
+        object-fit: contain;
+        transition: all 0.6s;
+      }
+      .accordeon__item:hover .accordeon__item_head .accordeon__item_plus {
+        transform: rotate(45deg);
+        transition: all 0.6s;
+      }
+      input[type="checkbox"]:checked + div + .accordeon__item_hide,
+      input[type="checkbox"]:checked + div + .accordeon__item_hide img {
+        height: 400px;
+        transition: all 0.6s;
+      }
+      input[type="checkbox"]:checked + .accordeon__item_head p {
+        color: black;
+      }
+      input[type="checkbox"]:checked
+        + .accordeon__item_head
+        .accordeon__item_plus {
+        transform: rotate(45deg);
+        transition: all 0.6s;
+      }
+      p {
+        font-size: 30px;
+        color: blue;
+      }
+     @media (max-width: 820px) {
+        p {
+          font-size: 24px;
+        }
+        .accordeon__item:hover .accordeon__item_hide,
+        .accordeon__item:hover .accordeon__item_hide img {
+          height: 300px;
+        }
+
+        input[type="checkbox"]:checked + div + .accordeon__item_hide,
+        input[type="checkbox"]:checked + div + .accordeon__item_hide img {
+          height: 300px;
+        }
+      }
+      @media (max-width: 320px) {
+        p {
+          font-size: 20px;
+        }
+        .accordeon__item:hover .accordeon__item_hide,
+        .accordeon__item:hover .accordeon__item_hide img {
+          height: 200px;
+        }
+
+        input[type="checkbox"]:checked + div + .accordeon__item_hide,
+        input[type="checkbox"]:checked + div + .accordeon__item_hide img {
+          height: 200px;
+        }
+      }
+    </style>
+</head>
+<body>
+    <div class="accordeon">
+        <h1>CSS BAYAN</h1>
+      <label class="accordeon__item" for="check1">
+        <input type="checkbox" id="check1" hidden checked />
+        <div class="accordeon__item_head">
+            <p>Hi how r u ?</p>
+            <svg
+              class="accordeon__item_plus"
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11 17C11 17.5523 11.4477 18 12 18C12.5523 18 13 17.5523 13 17V13H17C17.5523 13 18 12.5523 18 12C18 11.4477 17.5523 11 17 11H13V7C13 6.44771 12.5523 6 12 6C11.4477 6 11 6.44771 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H11V17Z"
+                fill="#000000"
+              />
+            </svg>
+          </div>
+        <div  class="accordeon__item_hide">
+          <img 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqGvGM-9pPEZY1HICRZG_c6SjzeV_JzwGCxA&usqp=CAU"
+            alt=""
+          />
+        </div>
+      </label>
+
+      <label class="accordeon__item" for="check2">
+        <input type="checkbox" id="check2" hidden/>
+        <div class="accordeon__item_head">
+            <p>This is a second meme</p>
+            <svg
+              class="accordeon__item_plus"
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11 17C11 17.5523 11.4477 18 12 18C12.5523 18 13 17.5523 13 17V13H17C17.5523 13 18 12.5523 18 12C18 11.4477 17.5523 11 17 11H13V7C13 6.44771 12.5523 6 12 6C11.4477 6 11 6.44771 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H11V17Z"
+                fill="#000000"
+              />
+            </svg>
+          </div>
+        <div  class="accordeon__item_hide">
+            
+          <img 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqGvGM-9pPEZY1HICRZG_c6SjzeV_JzwGCxA&usqp=CAU"
+            alt=""
+          />
+        </div>
+      </label>
+      <label class="accordeon__item" for="check3">
+        <input type="checkbox" id="check3" hidden />
+        <div class="accordeon__item_head">
+            <p>Greetings , How can I help U ?</p>
+            <svg
+              class="accordeon__item_plus"
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11 17C11 17.5523 11.4477 18 12 18C12.5523 18 13 17.5523 13 17V13H17C17.5523 13 18 12.5523 18 12C18 11.4477 17.5523 11 17 11H13V7C13 6.44771 12.5523 6 12 6C11.4477 6 11 6.44771 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H11V17Z"
+                fill="#000000"
+              />
+            </svg>
+          </div>
+        <div  class="accordeon__item_hide">
+            
+          <img 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqGvGM-9pPEZY1HICRZG_c6SjzeV_JzwGCxA&usqp=CAU"
+            alt=""
+          />
+        </div>
+      </label>
+    </div>
+</body>
+</html>
