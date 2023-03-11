@@ -84,7 +84,34 @@
         font-size: 30px;
         color: blue;
       }
-     
+     @media (max-width: 820px) {
+        p {
+          font-size: 24px;
+        }
+        .accordeon__item:hover .accordeon__item_hide,
+        .accordeon__item:hover .accordeon__item_hide img {
+          height: 300px;
+        }
+
+        input[type="checkbox"]:checked + div + .accordeon__item_hide,
+        input[type="checkbox"]:checked + div + .accordeon__item_hide img {
+          height: 300px;
+        }
+      }
+      @media (max-width: 320px) {
+        p {
+          font-size: 20px;
+        }
+        .accordeon__item:hover .accordeon__item_hide,
+        .accordeon__item:hover .accordeon__item_hide img {
+          height: 200px;
+        }
+
+        input[type="checkbox"]:checked + div + .accordeon__item_hide,
+        input[type="checkbox"]:checked + div + .accordeon__item_hide img {
+          height: 200px;
+        }
+      }
     </style>
 </head>
 <body>
