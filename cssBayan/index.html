@@ -5,7 +5,87 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS BAYAN</title>
-    <link rel="stylesheet" href="/style.css">
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .accordeon {
+        max-width: 800px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px 10px;
+        display: flex;
+        flex-direction: column;
+      }
+      .accordeon:hover .accordeon__item_plus {
+        display: block;
+      }
+      .accordeon:hover p {
+        color: black;
+      }
+      .accordeon__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.6s;
+      }
+      .accordeon__item_head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        border-bottom: 1px solid gray;
+        margin: 5px 0;
+        cursor: pointer;
+      }
+      .accordeon__item_plus {
+        display: none;
+      }
+      .accordeon__item_hide {
+        height: 0;
+        transition: all 0.6s;
+      }
+      .accordeon__item_hide img {
+        height: 0px;
+        width: 100%;
+        object-fit: contain;
+        transition: all 0.6s;
+        cursor: pointer;
+      }
+      .accordeon__item:hover .accordeon__item_hide,
+      .accordeon__item:hover .accordeon__item_hide img {
+        height: 400px;
+        object-fit: contain;
+        transition: all 0.6s;
+      }
+      .accordeon__item:hover .accordeon__item_head .accordeon__item_plus {
+        transform: rotate(45deg);
+        transition: all 0.6s;
+      }
+      input[type="checkbox"]:checked + div + .accordeon__item_hide,
+      input[type="checkbox"]:checked + div + .accordeon__item_hide img {
+        height: 400px;
+        transition: all 0.6s;
+      }
+      input[type="checkbox"]:checked + .accordeon__item_head p {
+        color: black;
+      }
+      input[type="checkbox"]:checked
+        + .accordeon__item_head
+        .accordeon__item_plus {
+        transform: rotate(45deg);
+        transition: all 0.6s;
+      }
+      p {
+        font-size: 30px;
+        color: blue;
+      }
+     
+    </style>
 </head>
 <body>
     <div class="accordeon">
